@@ -1,0 +1,65 @@
+.top_navbar {
+	color: #FFFFFF;
+	background-color: maroon;
+	width: 100%;
+	height: 5%;
+	font-size: 25px;
+}
+ 
+.color-red{
+	bottom: 0;
+	position: fixed;
+	background-color: maroon;
+	width: 100%;
+	height: 5%;
+	font-size: 18px;
+	left: 0;
+	color: #FFFFFF;
+	vertical-align: middle;
+} 
+
+.image-size {
+    height:62px;
+    width:62px;
+}
+
+.nav-header {
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: darkred;
+    color: white;
+    
+  
+}
+
+h2 {
+	font-weight: normal;
+}
+
+h3 {
+	font-weight: normal;
+}
+
+h4 {
+	font-weight: normal;
+}
+
+.material-icons {
+	vertical-align: middle;
+}
+
+.menu {
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+
+
+
+.navbar-new-top{
+    background: #fff;
+}
+.color-black{
+background-color: #000000;
+}

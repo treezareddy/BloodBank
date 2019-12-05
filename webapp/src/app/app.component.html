@@ -1,0 +1,66 @@
+<header>
+  <div class="container-fluid">
+    <div class="row mb-5">
+
+        <nav class="navbar fixed-top col-12 navbar navbar-expand-md navbar-dark nav-header">
+            <img  class="image-size" src="https://cdn0.iconfinder.com/data/icons/the-human-body-color/128/blood-drop-red-512.png"><h3> <a class="nav-link menu" *ngIf="loggedIn()" routerLink="/userpage">Blood Bank</a>
+              <a class="nav-link menu" data-toggle="tooltip" data-placement="bottom" title="Blood Bank Home" *ngIf="!loggedIn()" routerLink="/home">Blood Bank</a></h3>
+          <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#collapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="collapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link menu"  data-toggle="tooltip" data-placement="bottom" title="Login" *ngIf="!loggedIn()" routerLink="login/">Login</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link menu"  data-toggle="tooltip" data-placement="bottom" title="Register" *ngIf="!loggedIn()" routerLink="register/">Register</a>
+            </li>
+            <li class="nav-item menu active" *ngIf="loggedIn()">
+              <i class="material-icons other_icon">person </i> <span class="menu">{{this.authService.loggedInUser}}</span>
+            </li>
+            <li class="nav-item active" *ngIf="loggedIn()" (click)="this.authService.logout()">
+              <a class="nav-link menu" data-toggle="tooltip" data-placement="bottom" title="Logout" routerLink="/home">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class=" row mb-5 pb-10">
+      <nav class="navbar fixed-top navbar-expand-md  color-black" style="margin-top:70px">
+        <div class="navbar-collapse collapse " >
+          <ul class="navbar-nav w-100 justify-content-center mr-auto px-2">
+            <li class="nav-item">
+              <a class="nav-link text-light"  data-toggle="tooltip" data-placement="bottom" title="About Us" id="text-red" routerLink="aboutus">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" data-toggle="tooltip" data-placement="bottom" title="Request Blood" id="text-red" *ngIf="loggedIn()" routerLink="requestblood">Request Blood</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" id="text-red" data-toggle="tooltip" data-placement="bottom" title="Blood Availability" *ngIf="loggedIn()" routerLink="availability">Blood Availability</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" id="text-red" data-toggle="tooltip" data-placement="bottom" title="Blood Donation" *ngIf="loggedIn()" routerLink="blooddonation">Blood Donation</a>
+            <li class="nav-item">
+                <li class="nav-item">
+                    <a class="nav-link text-light" id="text-red" data-toggle="tooltip" data-placement="bottom" title="Feedback" *ngIf="loggedIn()" routerLink="feedBack">FeedBack</a>
+                  <li class="nav-item">
+              <a class="nav-link text-light" data-toggle="tooltip" data-placement="bottom" title="Blood Tips" id="text-red" routerLink="bloodtips">Blood Tips</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" data-toggle="tooltip" data-placement="bottom" title="Contact Us" id="text-red" routerLink="contactus">Contact Us</a>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+      </div>
+      </div>
+</header>
+<router-outlet></router-outlet>
+
+<nav class="navbar navbar-expand-sm navbar-dark text-light color-red">
+  Copyright @ 2019
+</nav>

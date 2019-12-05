@@ -1,0 +1,72 @@
+<div class="row">
+        <div class="col-xs-11 mt-5 ml-5 mr-5 mb-5 mx-auto">
+            <div class="card">
+                <h1 class="mt-5 ml-5 text-align">Blood Availability</h1>
+                <form [formGroup]="Bloodavailableform" (submit)="this.isAvailable(Bloodavailableform.value)">
+                    
+                    <div class="row ml-5 mr-5 mb-5 mt-5">
+                   
+                        <label for="">Username*</label>
+                        <input type="text" class="form-control" placeholder="Enter Username" formControlName="username" id="username">
+                        <div class="text-danger" *ngIf="username.invalid && username.errors.required && username.touched">Username is required</div>
+                    
+                    </div>
+                    <div class="row ml-5 mr-5 mb-5 mt-5">
+                        
+                            <label for="bloodgroup">BloodGroup*</label> 
+                            <select class="form-control" id="bloodgroup" formControlName="bloodgroup" name="bloodgroup">
+                                
+                                <option value="">Choose your Blood Group</option>
+                        <option *ngFor="let b of Bloodgroup" [ngValue]="b">{{b}}</option>
+                            </select>
+                            <div class="text-danger" *ngIf="bloodgroup.invalid && bloodgroup.errors.required && bloodgroup.touched">BloodGroup is required</div>
+                        
+                    </div>   
+                    <div class="row ml-5 mr-5 mb-5 mt-5">            
+                          
+                                <label for="contactNo">Contact Number*</label> 
+                                <input type="number" class="form-control" placeholder="Enter Contact Number" formControlName="contactNo" id="contactNo">
+                                <div class="text-danger" *ngIf="contactNo.invalid && contactNo.errors.required && contactNo.touched">Contact Number is required</div>
+                            
+                    </div>
+                   
+                        <div class="row ml-5 mr-5 mb-5 mt-5">
+                            
+                                    <label for="state">State*</label> 
+                                    <select class="form-control"  placeholder="Choose State" id="state" formControlName="state" (blur)="selectState($event)" (change)="selectState($event)" name="state">
+                                        
+                                        <option value="">Choose your State</option>
+                                <option *ngFor="let st of State" [ngValue]="st">{{st}}</option>
+                                    </select>
+                                    <div class="text-danger" *ngIf="state.invalid && state.errors.required && state.touched">State is required</div>
+                               
+                        </div>   
+                        <div class="row ml-5 mr-5 mb-5 mt-5">
+                               
+                                    <label for="area">Area*</label> 
+                                    <select class="form-control" placeholder="Choose area" id="area" formControlName="area" (blur)="selectArea($event)" (change)="selectArea($event)" name="area">
+                                    
+                                    <option value="">Choose your Area</option>
+                                    <option *ngFor="let ar of Area" [ngValue]="ar">{{ar}}</option>
+                                    </select>
+                                    <div class="text-danger" *ngIf="area.invalid && area.errors.required && area.touched">Area is required</div>
+                                
+                        </div>  
+                        
+                        <div class="row ml-5 mr-5 mb-5 mt-5">            
+                                <label for="pincode">Pincode*</label> 
+                                <input type="text" class="form-control" placeholder={{Pincode}} formControlName="pincode"  id="pincode">
+                                <div class="text-danger" *ngIf="pincode.invalid && pincode.errors.required && pincode.touched">Pincode is required</div>
+                    </div>
+                    <div class="row mt-5 ml-5 mr-5 mb-5 mb-5 mt-5">
+                        <div class="col-12">
+                            <button type="submit" class="btn search-button" [disabled]="!Bloodavailableform.valid">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+</div>
+
+
+
